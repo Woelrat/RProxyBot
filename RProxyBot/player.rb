@@ -29,6 +29,30 @@ module RProxyBot
       end
     end	
 
+    def eggs
+      units.values.select do |unit|
+        unit.type == Constants::UnitTypes::Egg
+      end
+    end	
+	
+    def zerglings
+      units.values.select do |unit|
+        unit.type == Constants::UnitTypes::Zergling
+      end
+    end		
+	
+    def overlord
+      units.values.select do |unit|
+        unit.type == Constants::UnitTypes::Overlord
+      end
+    end
+
+    def spawningpool
+      units.values.select do |unit|
+        unit.type == Constants::UnitTypes::SpawningPool
+      end
+    end		
+	
 		def self.parse(data)
 			Util.multi_parse(data, 5, Player)
 		end

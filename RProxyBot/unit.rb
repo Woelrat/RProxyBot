@@ -23,6 +23,10 @@ module RProxyBot
 			Util.multi_parse(data, 19, Unit, false)
 		end
 
+    def right_click(x,y)
+      CommandQueue.push(Commands::RightClick, @id, x, y)
+    end		
+		
     def right_click_unit(target)
       CommandQueue.push(Commands::RightClickUnit, @id, target.id)
     end
